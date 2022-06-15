@@ -1,0 +1,59 @@
+.dataTables_info {
+  font-size: 11.5pt;
+  margin-top: -12px;
+}
+.bter[type="number"]::-webkit-outer-spin-button,
+.bter[type="number"]::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+input[type='checkbox'] {
+  width:20px;
+  height:20px;
+}
+input[type='radio']{
+  width:15px;
+  height:15px;
+}
+/*Para el boton circular*/
+.btn-circle{
+  width:30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.42857;
+}
+/*Mostrar todo-nada*/
+.todo,.nada{
+  font-size: 8pt;
+  border: solid 1px black;
+  border-radius: 3px;
+  background: white;
+}
+/*para los botones como editar..eliminar(los que no estan dentro mi datatable)..*/
+.operacion{
+  margin-bottom: 2%;
+}
+/*Para el margen que se tiene en mi nuevo pedido*/
+.myrow{
+  margin-bottom: 12px
+}
+/*Estilo de los botones para cancelar busqueda*/
+#clrtalla,#clrnombreg,#clrcarnetd,#clrcelularc,#clrnombreh,#clrbancoa,#clr0,#clr1,#clr2,#clr3,#clr4,#clr5,#clr6,#clr7,#clr8,#clr9{
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  bottom: 0;
+  height: 14px;
+  margin: auto;
+  font-size: 18px;
+  cursor: pointer;
+  color:#ccc;
+}
+.ai{
+/*  color:#ccc;*/
+  right: 2.5em;
+}

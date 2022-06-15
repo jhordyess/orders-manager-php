@@ -1,0 +1,12 @@
+{
+  "name": "orders-manager",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "php-apache",
+  "extensions": ["bmewburn.vscode-intelephense-client"],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "postStartCommand": "bash config.sh",
+  "workspaceFolder": "/orders-manager",
+  "remoteUser": "jhordyess"
+}

@@ -1,0 +1,17 @@
+\documentclass[letter,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=.5cm]{geometry}
+\usepackage{multirow}
+\usepackage[pdftex]{graphicx}
+\newcommand{\test}{Datos aca}
+% <?php echo "\n" . "\\renewcommand{\\test}{" . LatexTemplate::escape($data['test']) . "}\n"; ?>
+\usepackage[pdftex,
+            pdfauthor={Jhordyess},
+            pdftitle={Itinerario},
+            pdfproducer={Latex with hyperref},
+            pdfcreator={pdflatex}]{hyperref}
+\begin{document}
+	\pagestyle{empty}
+	\noindent
+	\test{}
+\end{document}

@@ -1,0 +1,31 @@
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=hswE]ktX@_R5t3.
+      - MYSQL_DATABASE=orders-db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./build/backup.sql:/docker-entrypoint-initdb.d/backup.sql
+  pma:
+    depends_on:
+      - mysql
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "81:80"
+    environment:
+      - PMA_HOST=mysql
+  php-apache:
+    depends_on:
+      - mysql
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/orders-manager:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    ports:
+      - "80:80"

@@ -1,0 +1,19 @@
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=hswE]ktX@_R5t3.
+      - MYSQL_DATABASE=orders-db
+    volumes:
+      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
+  php-apache:
+    depends_on:
+      - mysql
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/orders-manager:cached
+    ports:
+      - "80:80"
