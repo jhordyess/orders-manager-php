@@ -13,7 +13,5 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    volumes:
-      - .:/orders-manager:cached
     ports:
       - "80:80"
