@@ -1,6 +1,11 @@
 <?php
 
-$con = mysqli_connect("mysql", "root", "hswE]ktX@_R5t3.", "orders-db");
+$con = mysqli_connect(
+  getenv("DB_HOST"),
+  getenv("DB_USER"),
+  getenv("DB_PASS"),
+  getenv("DB_NAME")
+);
 if (!$con) {
   mysqli_close($con);
   session_destroy();

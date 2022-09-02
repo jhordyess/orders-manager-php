@@ -3,8 +3,8 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=hswE]ktX@_R5t3.
-      - MYSQL_DATABASE=orders-db
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
     ports:
       - "3306:3306"
     volumes:
@@ -17,7 +17,7 @@ services:
     ports:
       - "81:80"
     environment:
-      - PMA_HOST=mysql
+      - PMA_HOST
   php-apache:
     depends_on:
       - mysql
@@ -26,6 +26,11 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - .:/orders-manager:cached
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+      - PMA_HOST
+      - DB_USER=root
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "80:80"

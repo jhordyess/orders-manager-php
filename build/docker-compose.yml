@@ -3,8 +3,8 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=hswE]ktX@_R5t3.
-      - MYSQL_DATABASE=orders-db
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
     volumes:
       - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql
   php-apache:
@@ -12,6 +12,11 @@ services:
       - mysql
     build:
       context: .
+      args:
+        - MYSQL_ROOT_PASSWORD
+        - MYSQL_DATABASE
+        - PMA_HOST=mysql
+        - DB_USER=root
       dockerfile: ./Dockerfile
     ports:
       - "80:80"

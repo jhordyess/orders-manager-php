@@ -1,5 +1,9 @@
 FROM php:7-apache
 ARG TEX_PATH=/opt/tinytex
+ARG MYSQL_ROOT_PASSWORD
+ARG MYSQL_DATABASE
+ARG PMA_HOST
+ARG DB_USER
 RUN chmod -R 755 /var/www/html/
 # Dependences
 RUN docker-php-ext-install mysqli  
@@ -14,4 +18,5 @@ RUN ~/bin/tlmgr install multirow varwidth standalone \
   && mv ~/.TinyTeX/* ${TEX_PATH} \
   && ${TEX_PATH}/bin/*/tlmgr path add
 RUN ln -s ${TEX_PATH}/bin/x86_64-linux/pdflatex /usr/local/bin/pdflatex
+RUN sed -i "s/<\/VirtualHost>/        SetEnv DB_HOST ${PMA_HOST}\n        SetEnv DB_USER ${DB_USER}\n        SetEnv DB_PASS ${MYSQL_ROOT_PASSWORD}\n        SetEnv DB_NAME ${MYSQL_DATABASE}\n<\/VirtualHost>/g" /etc/apache2/sites-available/000-default.conf
 CMD [ "apache2-foreground" ]

@@ -1,6 +1,6 @@
 #!/bin/bash
 project_name=${PWD##*/}
-full_path=$(eval "realpath .")
+full_path=$(realpath .)
 sudo a2enmod rewrite
 sudo a2enmod actions
 # Configurar vhost
@@ -11,6 +11,10 @@ sudo printf "<VirtualHost *:80>
   DocumentRoot ${full_path}/src
   CustomLog \${APACHE_LOG_DIR}/access.log combined
   ErrorLog \${APACHE_LOG_DIR}/error.log
+  SetEnv DB_HOST ${PMA_HOST}
+  SetEnv DB_USER ${DB_USER}
+  SetEnv DB_PASS ${MYSQL_ROOT_PASSWORD}
+  SetEnv DB_NAME ${MYSQL_DATABASE}
   <Directory \"${full_path}/src\">
     Options Indexes FollowSymLinks
     AllowOverride All
