@@ -29,7 +29,7 @@ bash build.sh
 Run for PowerShell:
 
 ```ps1
-& ./build.sh
+& ./build.ps1
 ```
 
 ## Dev Info
