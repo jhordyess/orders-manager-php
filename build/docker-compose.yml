@@ -13,10 +13,10 @@ services:
     build:
       context: .
       args:
-        - MYSQL_ROOT_PASSWORD
-        - MYSQL_DATABASE
-        - PMA_HOST=mysql
-        - DB_USER=root
+        - DB_HOST=mysql
+        - DB_USER
+        - DB_PASSWORD
+        - DB_NAME
       dockerfile: ./Dockerfile
     ports:
       - "80:80"

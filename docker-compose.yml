@@ -27,10 +27,10 @@ services:
     volumes:
       - .:/orders-manager:cached
     environment:
-      - MYSQL_ROOT_PASSWORD
-      - MYSQL_DATABASE
-      - PMA_HOST
-      - DB_USER=root
+      - DB_HOST
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
     command: /bin/sh -c "while sleep 1000; do :; done"
     ports:
       - "80:80"
