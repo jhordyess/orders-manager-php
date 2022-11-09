@@ -1,5 +1,5 @@
 #!/bin/bash
-cp -av ./src/ ./build/public/
-cd build
+cp -av ./src/ ./build/docker/public/
+cd build/docker
 docker compose -p orders-man-php -f ./docker-compose.yml up -d
-rm -rv ./public
+rm -r ./public

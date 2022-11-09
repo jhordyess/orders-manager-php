@@ -23,7 +23,7 @@ services:
       - mysql
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: ./php-apache.dockerfile
     volumes:
       - .:/orders-manager:cached
     environment:
