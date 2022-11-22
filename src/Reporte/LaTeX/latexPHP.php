@@ -11,7 +11,7 @@ class LatexTemplate
   /**
    * Generate a PDF file using xelatex and pass it to the user
    */
-  public static function download($data, $template_file, $outp_file, $imc)
+  public static function download($data, $template_file, $outp_file)
   {
     //-- Pre-flight checks --/
     if (!file_exists($template_file)) {
@@ -43,9 +43,6 @@ class LatexTemplate
     //-- Prueba de existencia --/
     if (!file_exists($pdf_f)) {
       @unlink($f);
-      if ($imc != "") {
-        @unlink($imc);
-      }
       throw new Exception("Output was not generated and latex returned: $ret.");
     }
     //-- Obtener y descargar --/
@@ -68,9 +65,6 @@ class LatexTemplate
     //-- Limpieza final///
     @unlink($pdf_f);
     @unlink($f);
-    if ($imc != "") {
-      @unlink($imc);
-    }
   }
 
   /**

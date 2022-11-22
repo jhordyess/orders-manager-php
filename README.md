@@ -17,22 +17,12 @@ Generate PDF invoices and order itinery.
 ![Dashboard](https://res.cloudinary.com/jhordyess/image/upload/v1660836126/orders-manager/Dashboard_php.png)
 ![New order](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/new_order_php.png)
 ![Order list](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/order_list_php.png)
-![Invoice with LaTeX](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/order_invoice_php.png)
+![Invoice with LaTeX](https://res.cloudinary.com/jhordyess/image/upload/v1669155002/orders-manager/order_invoice_php.png)
 ![DDBB with phpMyAdmin Designer](https://res.cloudinary.com/jhordyess/image/upload/v1662128383/orders-manager/DDBB_php.png)
 
 ## Multi-container Docker app
 
-Run the `docker-app.sh` file, it will create a new project named `orders-man-php` and run it; so you can visit [http://localhost](http://localhost).
-
-```sh
-bash docker-app.sh
-```
-
-Run for PowerShell:
-
-```ps1
-& ./docker-app.ps1
-```
+Please review the [docker](https://github.com/jhordyess/orders-manager-php/tree/docker) branch.
 
 ## Dev Info
 

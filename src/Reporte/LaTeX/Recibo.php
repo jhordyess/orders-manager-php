@@ -5,16 +5,6 @@
 //puedes ver  lista en http://php.net/manual/es/language.types.string.php
 $test = '';
 if (isset($_GET['a'])) {
-  //-imagen
-  $ch = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  $rol = '';
-  for ($u = 0; $u < 4; $u++) {
-    $in = rand(0, strlen($ch) - 1);
-    $rol .= $ch[$in];
-  }
-  $rol .= ".jpg";
-  @copy("../../Imagenes/descarga.png", sys_get_temp_dir() . "/" . $rol);
-  //--
   require '../../Formularios/conexion.php';
   require_once('latexPHP.php');
   require_once '../../Formularios/plantilla/numeral.php';
@@ -63,7 +53,7 @@ if (isset($_GET['a'])) {
       "\\multicolumn{1}{c}{}& \\multicolumn{2}{c}{\\tt \\textbf{\\color{red} Nº " . $serie . "}}\\\\\n" .
       "\\cline{2-3}\n" .
       "\\multirow{3}{*}{\n" .
-      "\\includegraphics[width=1.96cm]{" . $rol . "}\n" .
+      "\\url{https://jhordyess.com}\n" .
       "}& \\footnotesize\\textbf{RECIBO}& \\footnotesize\\textbf{FECHA} \\\\\n" .
       "\\cline{2-3}\n" .
       "&\\footnotesize\\textbf{EVENTO} & \\tt " . $fhp . "  \\\\ \n" .
@@ -148,7 +138,7 @@ if (isset($_GET['a'])) {
       "\\begin{minipage}[c]{8cm}\n" .
       "\\centering\n" .
       "\\medskip\n" .
-      "\\url{http://www.jhordyess.com}\n" .
+      "\\url{https://jhordyess.com}\n" .
       "\\medskip\n" .
       "\\end{minipage}\n" .
       "} \\\\\n" .
@@ -158,7 +148,7 @@ if (isset($_GET['a'])) {
       "\\end{table}";
 
     try {
-      LatexTemplate::download(array('test' => $test), 'Recibo.tex', 'Recibo.pdf', $rol);
+      LatexTemplate::download(array('test' => $test), 'Recibo.tex', 'Recibo.pdf');
       mysqli_close($con);
     } catch (Exception $e) {
       mysqli_close($con);

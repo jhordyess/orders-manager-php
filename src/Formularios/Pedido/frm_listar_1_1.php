@@ -3,7 +3,11 @@
 
 <head>
   <title>Lista de entregados</title>
-  <link rel="icon" href="/Imagenes/docs.png">
+  <link
+    rel="shortcut icon"
+    href="https://res.cloudinary.com/jhordyess/image/upload/v1667836186/global/favicon.svg.svg"
+    type="image/x-icon"
+  />
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
