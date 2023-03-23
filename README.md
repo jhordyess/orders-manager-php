@@ -10,15 +10,15 @@ Manage order status: orders, canceled, shipped, payment debts.
 
 Review customer and product details.
 
-Generate PDF invoices and order itinery.
+Generate PDF invoices and order itineraries.
 
 ## Screenshots
 
-![Dashboard](https://res.cloudinary.com/jhordyess/image/upload/v1660836126/orders-manager/Dashboard_php.png)
-![New order](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/new_order_php.png)
-![Order list](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/order_list_php.png)
-![Invoice with LaTeX](https://res.cloudinary.com/jhordyess/image/upload/v1669155002/orders-manager/order_invoice_php.png)
-![DDBB with phpMyAdmin Designer](https://res.cloudinary.com/jhordyess/image/upload/v1662128383/orders-manager/DDBB_php.png)
+![Dashboard](https://res.cloudinary.com/jhordyess/image/upload/v1660836126/orders-manager/php/Dashboard.png)
+![New order](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/php/new_order.png)
+![Order list](https://res.cloudinary.com/jhordyess/image/upload/v1662128724/orders-manager/php/order_list.png)
+![Invoice with LaTeX](https://res.cloudinary.com/jhordyess/image/upload/v1669155002/orders-manager/php/order_invoice.png)
+![DDBB with phpMyAdmin Designer](https://res.cloudinary.com/jhordyess/image/upload/v1662128383/orders-manager/php/DDBB.png)
 
 ## Multi-container Docker app
 
