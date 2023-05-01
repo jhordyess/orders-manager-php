@@ -1,12 +1,20 @@
 #!/bin/bash
+
+# Get the current project name and full path
 project_name=${PWD##*/}
 full_path=$(realpath .)
+
+# Enable Apache modules
 sudo a2enmod rewrite
 sudo a2enmod actions
-# Configurar vhost
+
+# Configure vhost
+# Remove the old vhost config file
 sudo rm -f /etc/apache2/sites-available/${project_name}-vhost.conf
+# Create a new vhost config file
 sudo touch /etc/apache2/sites-available/${project_name}-vhost.conf
-# TODO Use the environment variables declared in the container, and don't redefine it here.
+
+# Write the vhost configuration to the file
 sudo printf "<VirtualHost *:80>
   ServerAlias *
   DocumentRoot ${full_path}/src
@@ -22,11 +30,15 @@ sudo printf "<VirtualHost *:80>
     Require all granted
   </Directory>
 </VirtualHost>" | sudo tee -a /etc/apache2/sites-available/${project_name}-vhost.conf
-# Activar vhost
+
+# Activate the vhost configuration
 sudo a2ensite ${project_name}-vhost.conf
-# Desabilitar el default
+
+# Disable the default configuration
 sudo a2dissite 000-default.conf
-# Refrescar apache2
+
+# Reload the Apache configuration
 sudo service apache2 reload
-# Iniciar apache2
+
+# Start Apache
 sudo service apache2 start
