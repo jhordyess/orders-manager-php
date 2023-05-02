@@ -24,7 +24,7 @@ Generate PDF invoices and order itineraries.
 
 - Dev Environment: [VSCode](https://code.visualstudio.com/) with [dev containers](https://code.visualstudio.com/docs/remote/containers) in [Zorin OS](https://zorinos.com/)
 
-## Multi-container Docker app
+### Multi-container Docker app
 
 Please review the [docker](https://github.com/jhordyess/orders-manager-php/tree/docker) branch.
 
