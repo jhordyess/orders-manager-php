@@ -1,0 +1,16 @@
+{
+  "name": "orders-manager-php",
+  "dockerComposeFile": "../docker-compose.dev.yml",
+  "service": "php-app",
+  "shutdownAction": "none",
+  "customizations": {
+    "vscode": {
+      "extensions": ["bmewburn.vscode-intelephense-client"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      }
+    }
+  },
+  "postCreateCommand": "apache2ctl configtest",
+  "workspaceFolder": "/orders-manager-php/php-app"
+}

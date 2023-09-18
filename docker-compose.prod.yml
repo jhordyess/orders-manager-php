@@ -1,0 +1,44 @@
+name: orders-manager-php-prod
+services:
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_DATABASE
+    volumes:
+      - type: bind
+        source: ./mysql/backup.sql
+        target: /docker-entrypoint-initdb.d/backup.sql
+      - type: volume
+        source: mysql-data
+        target: /var/lib/mysql
+    networks:
+      - localnet
+
+  php-app:
+    depends_on:
+      - mysql
+    build:
+      context: ./php-app
+      dockerfile: prod.Dockerfile
+    restart: always
+    ports:
+      - "80-90:80"
+    environment:
+      - DB_HOST=mysql
+      - DB_USER
+      - DB_PASSWORD
+      - DB_NAME
+    networks:
+      - localnet
+
+volumes:
+  mysql-data:
+
+
+networks:
+  localnet:
+    driver: bridge
